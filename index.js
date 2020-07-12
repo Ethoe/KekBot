@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-const { sequelize, ServerAdvice } = require('./util/tables.js')
+const { ServerAdvice, Riddles } = require('./util/tables.js')
 const { prefix, token } = require('./config.json');
 
 const client = new Discord.Client();
@@ -17,6 +17,8 @@ client.once('ready', () => {
     console.log('Ready!');
     ServerAdvice.sync();
     console.log('ServerAdvice initilized.');
+    Riddles.sync();
+    console.log('Riddles initilized.')
 });
 
 client.on('message', async (message) => {

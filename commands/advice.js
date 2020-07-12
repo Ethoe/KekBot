@@ -8,7 +8,7 @@ module.exports = {
     aliases: ['a'],
 	execute: async(message, args) => {
         args.pop();
-        if (!args.length) {
+        if (!args[0]) {
             const server = message.guild.id;
             const advice = await ServerAdvice.findOne({
                 where: { ServerID: server },

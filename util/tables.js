@@ -16,4 +16,16 @@ const ServerAdvice = sequelize.define('tags', {
     Author: Sequelize.STRING,
 });
 
-module.exports = { sequelize, ServerAdvice }
+const Riddles = sequelize.define('riddles', {
+    ID: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    ServerID: Sequelize.STRING,
+    Riddle: Sequelize.STRING,
+    Answer: Sequelize.STRING,
+    Author: Sequelize.STRING,
+})
+
+module.exports = { sequelize, ServerAdvice, Riddles }
