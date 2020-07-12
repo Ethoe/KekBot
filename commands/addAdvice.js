@@ -5,11 +5,16 @@ module.exports = {
 	name: 'addAdvice',
     description: 'Adds to the random crowdsourced advice.',
     guildOnly: true,
-    usage: '<advice>',
+    usage: '<advice> (optional)<author>',
     aliases: ['aa'],
 	execute: async(message, args) => {
+        args.pop();
+        var author = message.author.username;
+        if(args[1]) {
+            author = args[1];
+        }
+
         const advice = args[0];
-        const author = message.author.username;
         const server = message.guild.id;
 
         try {
