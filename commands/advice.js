@@ -4,7 +4,7 @@ module.exports = {
 	name: 'advice',
     description: 'Gives random crowdsourced advice. Use arg g or global to get advice from everyone who uses the bot.',
     guildOnly: true,
-    usage: '<g> or <global>',
+    usage: '<g or global>',
     aliases: ['a'],
 	execute: async(message, args) => {
         args.pop();

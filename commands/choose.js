@@ -3,7 +3,7 @@ module.exports = {
 	name: 'choose',
     description: 'Chooses an option that you sepertate with prefix',
     aliases: ['c'],
-    usage: `<option 1 ${prefix} option 2>`,
+    usage: `<option 1> ${prefix} <option 2> ${prefix}...`,
     args: true,
 	execute: async (message, args) => {
         args.pop()

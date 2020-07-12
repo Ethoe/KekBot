@@ -5,6 +5,7 @@ module.exports = {
 	name: 'addAdvice',
     description: 'Adds to the random crowdsourced advice.',
     guildOnly: true,
+    usage: '<advice>',
     aliases: ['aa'],
 	execute: async(message, args) => {
         const advice = args[0];

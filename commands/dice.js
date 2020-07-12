@@ -1,6 +1,7 @@
 module.exports = {
 	name: 'dice',
     description: 'Rolls a dice of argumented number, or default 6',
+    usage: '<number of sides>',
     aliases: ['d'],
 	execute: async (message, args) => {
         args.pop();
