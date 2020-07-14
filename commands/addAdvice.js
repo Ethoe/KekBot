@@ -5,7 +5,7 @@ module.exports = {
 	name: 'addAdvice',
     description: 'Adds to the random crowdsourced advice.',
     guildOnly: true,
-    usage: '<advice> (optional)<author>',
+    usage: `<advice> ${prefix}(optional)<author>`,
     aliases: ['aa'],
 	execute: async(message, args) => {
         args.pop();

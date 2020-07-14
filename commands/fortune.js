@@ -8,15 +8,17 @@ module.exports = {
 	execute: async (message, args) => {
 		const date = new Date();
 		const seed = parseInt(message.author.id.slice(0, 8)) + (date.getDate() * date.getMonth());
-		const advice = await ServerAdvice.findOne({
-			order: sequelize.random(),
-		});
+		const server = message.guild.id;
+        const advice = await ServerAdvice.findOne({
+            where: { ServerID: server },
+            order: sequelize.random(),
+        });
 		if (advice) {
 			var advices = '"' + advice.get('Advice') + '"';
 			var author = '-' + advice.get('Author');
 		} else {
 			var advices = 'No advice found, uh oh';
-			var author = 'idk you arent supposed to see this';
+			var author = 'idk you arent supposed to see this, add some to this server with $addAdvice';
 		}
 		var weekday = new Array(7);
 		weekday[0] = "Sunday";
